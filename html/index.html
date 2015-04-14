@@ -9,6 +9,8 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -69,11 +71,11 @@
 	    		<div class="form-inline">
 					<div class="form-group">
 					    <label for="widthInput">Width</label>
-					    <input type="text" class="form-control" id="widthInput" placeholder="Width in Ft">
+					    <input type="number" class="form-control widthInput" id="widthInput" placeholder="Width in Ft">
 					</div>
 	    			<div class="form-group">
 					    <label for="heightInput">Height</label>
-					    <input type="text" class="form-control" id="heightInput" placeholder="Height in Ft">
+					    <input type="number" class="form-control heightInput" id="heightInput" placeholder="Height in Ft">
 					</div>
 				</div>
     		</div>
@@ -88,11 +90,11 @@
           <th>Item</th>
           <th>Type</th>
           <th>Quantity</th>
+          <th>Weight/ft</th>
+          <th>Total Weight</th>
           <th>Cost</th>
           <th>Amount</th>
-          <th>Amount</th>
-          <th>Amount</th>
-          <th>Amount</th>
+
         </tr>
       </thead>
       <tbody>
@@ -101,119 +103,233 @@
           <td>Strip</td>
           <td>
           	<select class="form-control">
-			  <option>18</option>
-			  <option>19</option>
-			  <option>20</option>
-			  <option>21</option>
-			</select>
+      			  <option>18</option>
+      			  <option>19</option>
+      			  <option>20</option>
+      			  <option>21</option>
+      			</select>
 		  </td>
           <td>
-          	<input type="text" id="disabledTextInput" class="form-control" placeholder="W" disabled>
+          	<input type="number" id="disabledTextInput" class="form-control numberOfStrips" placeholder="No.of Strips" disabled>
           </td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control weightOfEachStrip" placeholder="Weight of each Strip" disabled>
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalStripweight" placeholder="0" disabled value="0">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control" placeholder="Cost per Kg" disabled value="57">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalStripAmount" placeholder="0" disabled value="0">
+          </td>
+
         </tr>
         <tr>
           <th scope="row">2</th>
           <td>Spring</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <td>
+            <select class="form-control">
+              <option>3.5</option>
+              <option>4.5</option>
+            </select>
+          </td>
+          <td>
+            <input type="number" class="form-control springQuantity" id="widthInput" placeholder="Quantity in Piece">
+          </td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control" placeholder="80" disabled value="80">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalSpringAmount" placeholder="0" disabled value="0">
+          </td>
+
         </tr>
         <tr>
           <th scope="row">3</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <td>Bracket</td>
+          <td>-</td>
+          <td>
+            <input type="number" class="form-control bracketQuantity" id="widthInput" placeholder="Quantity in Kgs">
+          </td>
+          <td>-</td>
+          <td>
+            -
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control" placeholder="45" disabled value="45">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalBracketAmount" placeholder="0" disabled value="0">
+          </td>
+
         </tr>
         <tr>
           <th scope="row">4</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <td>L. Bends</td>
+          <td>-</td>
+          <td>
+            <input type="number" class="form-control lBendQuantity" id="widthInput" placeholder="Quantity in Kgs">
+          </td>
+          <td>-</td>
+          <td>
+            -
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control" placeholder="65" disabled value="65">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalLBendAmount" placeholder="0" disabled value="0">
+          </td>
+
         </tr>
         <tr>
           <th scope="row">5</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <td>Bottom</td>
+          <td>-</td>
+          <td>
+            <input type="number" class="form-control widthInFt" id="" placeholder="Width in Ft">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control buttomWeight" placeholder="" disabled value="800">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalBottomWeight" placeholder="0" disabled value="0">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control" placeholder="58" disabled value="58">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalBottomAmount" placeholder="0" disabled value="0">
+          </td>
+
         </tr>
         <tr>
           <th scope="row">6</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <td>Guide</td>
+          <td>-</td>
+          <td>
+            <input type="number" class="form-control heightInFt" id="widthInput" placeholder="Height in Ft">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control guideWeight" placeholder="" disabled value="625">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalGuideWeight" placeholder="0" disabled value="0">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control" placeholder="58" disabled value="58">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalGuideAmount" placeholder="0" disabled value="0">
+          </td>
+
         </tr>
         <tr>
           <th scope="row">7</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <td>Pipe</td>
+          <td>-</td>
+          <td>
+            <input type="number" class="form-control widthInFt" id="widthInput" placeholder="Width in Ft">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control pipeWeight" placeholder="" disabled value="750">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalPipeWeight" placeholder="0" disabled value="0">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control" placeholder="54" disabled value="54">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalPipeAmount" placeholder="0" disabled value="0">
+          </td>
+
         </tr>
         <tr>
           <th scope="row">8</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <td>Barring</td>
+          <td>-</td>
+          <td>
+            <input type="number" class="form-control barringQuantity" id="widthInput" placeholder="Quantity in Pieces">
+          </td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control" placeholder="80" disabled value="80">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalBarringAmount" placeholder="0" disabled value="0">
+          </td>
+
         </tr>
         <tr>
           <th scope="row">9</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <td>Baring Drum</td>
+          <td>-</td>
+          <td>
+            <input type="number" class="form-control barringDrumQuantity" id="widthInput" placeholder="Quantity in Pieces">
+          </td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control" placeholder="230" disabled value="230">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalBarringDrumAmount" placeholder="0" disabled value="0">
+          </td>
+
         </tr>
         <tr>
           <th scope="row">10</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <td>Side Lock</td>
+          <td>-</td>
+          <td>
+            <input type="number" class="form-control sideLockQuantity" id="widthInput" placeholder="Quantity in Pieces">
+          </td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control" placeholder="230" disabled value="230">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalSideLockAmount" placeholder="0" disabled value="0">
+          </td>
+
+        </tr>
+        <tr>
+          <th scope="row">11</th>
+          <td>Center Lock</td>
+          <td>-</td>
+          <td>
+            <input type="number" class="form-control centerLockQuantity" id="widthInput" placeholder="Quantity in Pieces">
+          </td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control" placeholder="600" disabled value="600">
+          </td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalCenterLockAmount" placeholder="0" disabled value="0">
+          </td>
+
+        </tr>
+        <tr>
+          <th scope="row">Total</th>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            -
+          </td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>
+            <input type="number" id="disabledTextInput" class="form-control totalAmount" placeholder="0" disabled value="0">
+          </td>
         </tr>
       </tbody>
     </table>
@@ -221,9 +337,17 @@
     	</div>
     </div>
 
+
+
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+    </script>
   </body>
 </html>
